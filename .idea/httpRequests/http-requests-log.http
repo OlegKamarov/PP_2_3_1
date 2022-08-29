@@ -1,0 +1,14 @@
+GET http://localhost/people
+
+###
+
+GET http://localhost
+
+###
+
+GET http://localhost:8080
+
+<> 2022-08-29T070639.404.html
+
+###
+
