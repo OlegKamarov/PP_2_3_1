@@ -1,7 +1,9 @@
 package ru.config;
 
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.*;
@@ -28,6 +30,15 @@ public class MySpringMvcDispatcherSerlvetIntitializer extends AbstractAnnotation
         super.onStartup(aServletContext);
         registerCharacterEncodingFilter(aServletContext);
         registerHiddenFieldFilter(aServletContext);
+
+//        AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
+//        appContext.register(MySpringMvcDispatcherSerlvetIntitializer.class);
+//
+//        ServletRegistration.Dynamic dispatcher = aServletContext.addServlet(
+//                "SpringDispatcher", new DispatcherServlet(appContext));
+//        dispatcher.setLoadOnStartup(1);
+//        dispatcher.addMapping("/");
+
     }
 
     private void registerHiddenFieldFilter(ServletContext aContext) {

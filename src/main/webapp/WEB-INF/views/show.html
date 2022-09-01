@@ -8,10 +8,10 @@
 <p th:text="${'name: ' + person.getName() + ', age: ' + person.getAge() + ', email: ' + person.getEmail()}">VALUE</p>
 <p th:text="${person.getId()}">VALUE</p>
 
-<a th:href="@{/{id}/edit(id=${person.getId()})}">Edit</a>
+<a th:href="@{/{id}/edit(id=${person.getId()})}">Редактировать</a>
 
 <form th:method="DELETE" th:action="@{/{id}(id=${person.getId()})}">
-    <input type="submit" value="Delete"/>
+    <input type="submit" value="Удалить"/>
 </form>
 </body>
 </html>
