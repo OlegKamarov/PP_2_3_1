@@ -19,14 +19,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import ru.models.Person;
 
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
-//@ComponentScan("ru")
-@EnableJpaRepositories("ru")
+@ComponentScan("ru")
+//@EnableJpaRepositories("ru")
 @PropertySource("classpath:hibernate.properties")
 @EnableTransactionManagement
 @EnableWebMvc
@@ -88,6 +89,7 @@ public class SpringConfig implements WebMvcConfigurer {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
+        properties.put("hbm2lld.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 
         return properties;
     }
@@ -103,7 +105,7 @@ public class SpringConfig implements WebMvcConfigurer {
 //        props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 //
 //        factoryBean.setHibernateProperties(props);
-//        factoryBean.setAnnotatedClasses(Person.class);
+        factoryBean.setAnnotatedClasses(Person.class);
 
         return factoryBean;
     }

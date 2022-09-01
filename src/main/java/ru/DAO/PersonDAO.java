@@ -43,32 +43,30 @@ public class PersonDAO {
     public List<Person> index() {
         Session session = sessionFactory.getCurrentSession();
 
-        List<Person> people = session.createQuery("select p from Person p", Person.class).getResultList();
-
-        return people;
+        return session.createQuery("select p from Person p", Person.class).getResultList();
     }
 
-    public Person show(int id) {
-        return null;
-//                people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
-    }
-
-    public void save(Person person) {
-//        sessionFactory.getCurrentSession().save(person);
-
-//        person.setId(++PEOPLE_COUNT);
-//        people.add(person);
-    }
-
-    public void update(int id, Person updatedPerson) {
-//        Person personToBeUpdated = show(id);
+//    public Person show(int id) {
+//        return null;
+////                people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
+//    }
 //
-//        personToBeUpdated.setName(updatedPerson.getName());
-//        personToBeUpdated.setAge(updatedPerson.getAge());
-//        personToBeUpdated.setEmail(updatedPerson.getEmail());
-    }
-
-    public void delete(int id) {
-//        people.removeIf(p -> p.getId() == id);
-    }
+//    public void save(Person person) {
+////        sessionFactory.getCurrentSession().save(person);
+//
+////        person.setId(++PEOPLE_COUNT);
+////        people.add(person);
+//    }
+//
+//    public void update(int id, Person updatedPerson) {
+////        Person personToBeUpdated = show(id);
+////
+////        personToBeUpdated.setName(updatedPerson.getName());
+////        personToBeUpdated.setAge(updatedPerson.getAge());
+////        personToBeUpdated.setEmail(updatedPerson.getEmail());
+//    }
+//
+//    public void delete(int id) {
+////        people.removeIf(p -> p.getId() == id);
+//    }
 }
