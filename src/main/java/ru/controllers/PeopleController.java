@@ -42,6 +42,7 @@ public class PeopleController {
     public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
+            System.out.println("есть ошибки");
             return "/new";
         }
         personService.save(person);

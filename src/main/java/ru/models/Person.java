@@ -23,7 +23,7 @@ public class Person {
     private int age;
     @NotEmpty(message = "Email should not be empty")
     @Email(message = "Email should be valid")
-    @Column(name = "email")
+    @Column(name = "email", unique = true, updatable = false)
     private String email;
 
     public Person() {
